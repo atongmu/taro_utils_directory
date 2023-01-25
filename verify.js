@@ -1,8 +1,8 @@
 /*
  * @Author: codingfly
- * @Description: 
+ * @Description: 类型判断
  * @Date: 2023-01-25 23:48:04
- * @LastEditTime: 2023-01-26 00:02:35
+ * @LastEditTime: 2023-01-26 01:34:00
  * @FilePath: \taro_utils_directory\verify.js
  */
 

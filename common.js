@@ -1,8 +1,8 @@
 /*
  * @Author: codingfly
- * @Description: 
+ * @Description: 工具
  * @Date: 2023-01-25 23:48:07
- * @LastEditTime: 2023-01-26 00:04:09
+ * @LastEditTime: 2023-01-26 01:34:09
  * @FilePath: \taro_utils_directory\common.js
  */
 import Taro from "@tarojs/taro";
@@ -12,29 +12,29 @@ import Taro from "@tarojs/taro";
  * @param  {...any} args 
  * @returns 
  */
-export default function cs(...args) {
+export const cs = (...args) => {
     const length = args.length;
     let classNames = [];
     for (let i = 0; i < length; i++) {
-      const v = args[i];
-      if (!v) {
-        continue;
-      }
-      if (isString(v)) {
-        classNames.push(v);
-      } else if (isArray(v)) {
-        classNames = classNames.concat(v);
-      } else if (isObject(v)) {
-        Object.keys(v).forEach((k) => {
-          if (v[k]) {
-            classNames.push(k);
-          }
-        });
-      }
+        const v = args[i];
+        if (!v) {
+            continue;
+        }
+        if (isString(v)) {
+            classNames.push(v);
+        } else if (isArray(v)) {
+            classNames = classNames.concat(v);
+        } else if (isObject(v)) {
+            Object.keys(v).forEach((k) => {
+                if (v[k]) {
+                    classNames.push(k);
+                }
+            });
+        }
     }
     return [...new Set(classNames)].join(' ');
-  }
-  
+}
+
 /**
  * 判断类型函数
  * @param {*} obj 
@@ -117,7 +117,7 @@ export const showModal = (msg, callback) => {
  * @param {object}  query 页面参数
  * @param {string}  modo  跳转类型(默认navigateTo)
 */
-export function goTo(url, query = {}, modo = 'navigateTo') {
+export const goTo = (url, query = {}, modo = 'navigateTo') => {
     if (!url || url.length == 0) {
         return false
     }
@@ -150,17 +150,17 @@ export function goTo(url, query = {}, modo = 'navigateTo') {
  */
 export const getEmptyPaginateObj = () => {
     return util.deepClone(paginate)
-  }
-  
-  /**
-   * 加载更多列表数据
-   * @param {Object} resList 新列表数据
-   * @param {Object} oldList 旧列表数据
-   * @param {int} pageNo 当前页码
-   */
-  export const getMoreListData = (resList, oldList, pageNo) => {
+}
+
+/**
+ * 加载更多列表数据
+ * @param {Object} resList 新列表数据
+ * @param {Object} oldList 旧列表数据
+ * @param {int} pageNo 当前页码
+ */
+export const getMoreListData = (resList, oldList, pageNo) => {
     // 如果是第一页需手动制空列表
     if (pageNo == 1) oldList.data = []
     // 合并新数据
     return oldList.data.concat(resList.data)
-  }
+}

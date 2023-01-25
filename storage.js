@@ -1,8 +1,8 @@
 /*
  * @Author: codingfly
- * @Description: 
+ * @Description: 缓存
  * @Date: 2022-11-23 21:05:21
- * @LastEditTime: 2023-01-26 00:07:02
+ * @LastEditTime: 2023-01-26 01:34:16
  * @FilePath: \taro_utils_directory\storage.js
  * 缓存数据优化  
  * const storage = require('@/utils/storage');  
